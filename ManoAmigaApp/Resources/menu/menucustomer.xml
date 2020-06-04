@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  
+  <item
+      android:id="@+id/libros"
+      android:icon="@drawable/ic_libros"
+      android:title="@string/txtmenu1"/>
+
+  <item
+      android:id="@+id/categorias"
+      android:icon="@drawable/ic_categorias"
+      android:title="@string/txtmenu2" />
+
+  <item
+    android:id="@+id/nuevos"
+    android:icon="@drawable/ic_nuevos"
+    android:title="@string/txtmenu3" />
+
+  <item
+    android:id="@+id/pendientes"
+    android:icon="@drawable/ic_pendientes"
+    android:title="@string/txtmenu4" />
+
+
+
+</menu>

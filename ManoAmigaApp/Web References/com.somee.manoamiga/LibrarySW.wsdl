@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://manoamigalibrary.somee.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://manoamigalibrary.somee.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://manoamigalibrary.somee.com/">
+      <s:element name="AccountSecurity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="permiso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountSecurityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountSecurityResult" type="tns:WebRegisterResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WebRegisterResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Register" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasenia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="tns:WebLoginResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WebLoginResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLogged" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CustomerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerDataResult" type="tns:CustomerWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Foto" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CustomerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerInfoResult" type="tns:CustomerWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookList">
+        <s:complexType />
+      </s:element>
+      <s:element name="BookListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookListResult" type="tns:ArrayOfBookWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBookWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BookWS" nillable="true" type="tns:BookWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BookWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Autor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Portada" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="Adquisicion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MateriaId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BookCategory">
+        <s:complexType />
+      </s:element>
+      <s:element name="BookCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookCategoryResult" type="tns:ArrayOfCategoryWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCategoryWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CategoryWS" nillable="true" type="tns:CategoryWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CategoryWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BookListByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookListByCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookListByCategoryResult" type="tns:ArrayOfBookWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewBooks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewBooksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBooksResult" type="tns:ArrayOfBookWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RentalByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RentalByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RentalByCustomerResult" type="tns:ArrayOfRentalWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRentalWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RentalWS" nillable="true" type="tns:RentalWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RentalWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaAlquiler" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaDevolucion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaRealDevolucion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RentalDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RentalId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RentalDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RentalDetailsResult" type="tns:ArrayOfRentalDetailsWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRentalDetailsWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RentalDetailsWS" nillable="true" type="tns:RentalDetailsWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RentalDetailsWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CopiaId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AlquilerId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TituloLibro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Portada" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroCopia" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FeedbackBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BookId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FeedbackBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FeedbackBookResult" type="tns:ArrayOfFeedBackWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFeedBackWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FeedBackWS" nillable="true" type="tns:FeedBackWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FeedBackWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Puntaje" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comentario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sugerencia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LibroId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombresCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Portada" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerPhoto" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Resumen" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaValoracion" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FeedbackCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Score" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BookId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaValoracion" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FeedbackCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FeedbackCustomerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ISBN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Autor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Portada" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="Adquisicion" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddBookResult" type="tns:MessageWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MessageWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="band" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCopy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NoCopy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NoBook" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCopyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCopyResult" type="tns:MessageWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCustomerResult" type="tns:MessageWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerList">
+        <s:complexType />
+      </s:element>
+      <s:element name="CustomerListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerListResult" type="tns:ArrayOfCustomerWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCustomerWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerWS" nillable="true" type="tns:CustomerWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddRental">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="customerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateNow" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RealReturnDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="BooksDetails" type="tns:ArrayOfRentalDetailsWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRentalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddRentalResult" type="tns:MessageWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RentalReturns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RentalCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RentalReturnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RentalReturnsResult" type="tns:MessageWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ISBN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchBookResult" type="tns:BookWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AvailableBooks">
+        <s:complexType />
+      </s:element>
+      <s:element name="AvailableBooksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AvailableBooksResult" type="tns:ArrayOfBookListWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBookListWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BookListWS" nillable="true" type="tns:BookListWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BookListWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Autor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Portada" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="Adquisicion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroCopia" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Pendientes">
+        <s:complexType />
+      </s:element>
+      <s:element name="PendientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PendientesResult" type="tns:ArrayOfStattics" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStattics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Stattics" nillable="true" type="tns:Stattics" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Stattics">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RentaId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoAlquiler" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CantidadLibros" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClienteId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaAlq" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaDevo" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PendientesByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cliente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PendientesByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PendientesByCustomerResult" type="tns:ArrayOfStattics" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LibrosSolicitados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LibrosSolicitadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LibrosSolicitadosResult" type="tns:ArrayOfLibroSolicitado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLibroSolicitado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LibroSolicitado" nillable="true" type="tns:LibroSolicitado" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LibroSolicitado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RentalCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="RentalCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RentalCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="BookCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImageProfileChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageProfile" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImageProfileChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImageProfileChangeResult" type="tns:MessageWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopiesBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ISBN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopiesBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CopiesBookResult" type="tns:ArrayOfCopysBookWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCopysBookWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CopysBookWS" nillable="true" type="tns:CopysBookWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CopysBookWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CopyId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroCopia" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LibroId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Portada" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PasswordChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PasswordChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordChangeResult" type="tns:MessageWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AccountSecuritySoapIn">
+    <wsdl:part name="parameters" element="tns:AccountSecurity" />
+  </wsdl:message>
+  <wsdl:message name="AccountSecuritySoapOut">
+    <wsdl:part name="parameters" element="tns:AccountSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerData" />
+  </wsdl:message>
+  <wsdl:message name="CustomerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookListSoapIn">
+    <wsdl:part name="parameters" element="tns:BookList" />
+  </wsdl:message>
+  <wsdl:message name="BookListSoapOut">
+    <wsdl:part name="parameters" element="tns:BookListResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:BookCategory" />
+  </wsdl:message>
+  <wsdl:message name="BookCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:BookCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookListByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:BookListByCategory" />
+  </wsdl:message>
+  <wsdl:message name="BookListByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:BookListByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewBooksSoapIn">
+    <wsdl:part name="parameters" element="tns:NewBooks" />
+  </wsdl:message>
+  <wsdl:message name="NewBooksSoapOut">
+    <wsdl:part name="parameters" element="tns:NewBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="RentalByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:RentalByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="RentalByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:RentalByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="RentalDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:RentalDetails" />
+  </wsdl:message>
+  <wsdl:message name="RentalDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:RentalDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FeedbackBookSoapIn">
+    <wsdl:part name="parameters" element="tns:FeedbackBook" />
+  </wsdl:message>
+  <wsdl:message name="FeedbackBookSoapOut">
+    <wsdl:part name="parameters" element="tns:FeedbackBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="FeedbackCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:FeedbackCustomer" />
+  </wsdl:message>
+  <wsdl:message name="FeedbackCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:FeedbackCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBookSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBook" />
+  </wsdl:message>
+  <wsdl:message name="AddBookSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCopySoapIn">
+    <wsdl:part name="parameters" element="tns:AddCopy" />
+  </wsdl:message>
+  <wsdl:message name="AddCopySoapOut">
+    <wsdl:part name="parameters" element="tns:AddCopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCustomer" />
+  </wsdl:message>
+  <wsdl:message name="AddCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerListSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerList" />
+  </wsdl:message>
+  <wsdl:message name="CustomerListSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRentalSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRental" />
+  </wsdl:message>
+  <wsdl:message name="AddRentalSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRentalResponse" />
+  </wsdl:message>
+  <wsdl:message name="RentalReturnsSoapIn">
+    <wsdl:part name="parameters" element="tns:RentalReturns" />
+  </wsdl:message>
+  <wsdl:message name="RentalReturnsSoapOut">
+    <wsdl:part name="parameters" element="tns:RentalReturnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchBookSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchBook" />
+  </wsdl:message>
+  <wsdl:message name="SearchBookSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="AvailableBooksSoapIn">
+    <wsdl:part name="parameters" element="tns:AvailableBooks" />
+  </wsdl:message>
+  <wsdl:message name="AvailableBooksSoapOut">
+    <wsdl:part name="parameters" element="tns:AvailableBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="PendientesSoapIn">
+    <wsdl:part name="parameters" element="tns:Pendientes" />
+  </wsdl:message>
+  <wsdl:message name="PendientesSoapOut">
+    <wsdl:part name="parameters" element="tns:PendientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PendientesByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:PendientesByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="PendientesByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:PendientesByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="LibrosSolicitadosSoapIn">
+    <wsdl:part name="parameters" element="tns:LibrosSolicitados" />
+  </wsdl:message>
+  <wsdl:message name="LibrosSolicitadosSoapOut">
+    <wsdl:part name="parameters" element="tns:LibrosSolicitadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="RentalCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:RentalCode" />
+  </wsdl:message>
+  <wsdl:message name="RentalCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:RentalCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:BookCode" />
+  </wsdl:message>
+  <wsdl:message name="BookCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:BookCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImageProfileChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:ImageProfileChange" />
+  </wsdl:message>
+  <wsdl:message name="ImageProfileChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:ImageProfileChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopiesBookSoapIn">
+    <wsdl:part name="parameters" element="tns:CopiesBook" />
+  </wsdl:message>
+  <wsdl:message name="CopiesBookSoapOut">
+    <wsdl:part name="parameters" element="tns:CopiesBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="PasswordChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:PasswordChange" />
+  </wsdl:message>
+  <wsdl:message name="PasswordChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:PasswordChangeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LibrarySWSoap">
+    <wsdl:operation name="AccountSecurity">
+      <wsdl:input message="tns:AccountSecuritySoapIn" />
+      <wsdl:output message="tns:AccountSecuritySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerData">
+      <wsdl:input message="tns:CustomerDataSoapIn" />
+      <wsdl:output message="tns:CustomerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInfo">
+      <wsdl:input message="tns:CustomerInfoSoapIn" />
+      <wsdl:output message="tns:CustomerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookList">
+      <wsdl:input message="tns:BookListSoapIn" />
+      <wsdl:output message="tns:BookListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookCategory">
+      <wsdl:input message="tns:BookCategorySoapIn" />
+      <wsdl:output message="tns:BookCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookListByCategory">
+      <wsdl:input message="tns:BookListByCategorySoapIn" />
+      <wsdl:output message="tns:BookListByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewBooks">
+      <wsdl:input message="tns:NewBooksSoapIn" />
+      <wsdl:output message="tns:NewBooksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RentalByCustomer">
+      <wsdl:input message="tns:RentalByCustomerSoapIn" />
+      <wsdl:output message="tns:RentalByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RentalDetails">
+      <wsdl:input message="tns:RentalDetailsSoapIn" />
+      <wsdl:output message="tns:RentalDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FeedbackBook">
+      <wsdl:input message="tns:FeedbackBookSoapIn" />
+      <wsdl:output message="tns:FeedbackBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FeedbackCustomer">
+      <wsdl:input message="tns:FeedbackCustomerSoapIn" />
+      <wsdl:output message="tns:FeedbackCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBook">
+      <wsdl:input message="tns:AddBookSoapIn" />
+      <wsdl:output message="tns:AddBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCopy">
+      <wsdl:input message="tns:AddCopySoapIn" />
+      <wsdl:output message="tns:AddCopySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <wsdl:input message="tns:AddCustomerSoapIn" />
+      <wsdl:output message="tns:AddCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerList">
+      <wsdl:input message="tns:CustomerListSoapIn" />
+      <wsdl:output message="tns:CustomerListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRental">
+      <wsdl:input message="tns:AddRentalSoapIn" />
+      <wsdl:output message="tns:AddRentalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RentalReturns">
+      <wsdl:input message="tns:RentalReturnsSoapIn" />
+      <wsdl:output message="tns:RentalReturnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBook">
+      <wsdl:input message="tns:SearchBookSoapIn" />
+      <wsdl:output message="tns:SearchBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AvailableBooks">
+      <wsdl:input message="tns:AvailableBooksSoapIn" />
+      <wsdl:output message="tns:AvailableBooksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pendientes">
+      <wsdl:input message="tns:PendientesSoapIn" />
+      <wsdl:output message="tns:PendientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PendientesByCustomer">
+      <wsdl:input message="tns:PendientesByCustomerSoapIn" />
+      <wsdl:output message="tns:PendientesByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LibrosSolicitados">
+      <wsdl:input message="tns:LibrosSolicitadosSoapIn" />
+      <wsdl:output message="tns:LibrosSolicitadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RentalCode">
+      <wsdl:input message="tns:RentalCodeSoapIn" />
+      <wsdl:output message="tns:RentalCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookCode">
+      <wsdl:input message="tns:BookCodeSoapIn" />
+      <wsdl:output message="tns:BookCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImageProfileChange">
+      <wsdl:input message="tns:ImageProfileChangeSoapIn" />
+      <wsdl:output message="tns:ImageProfileChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopiesBook">
+      <wsdl:input message="tns:CopiesBookSoapIn" />
+      <wsdl:output message="tns:CopiesBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordChange">
+      <wsdl:input message="tns:PasswordChangeSoapIn" />
+      <wsdl:output message="tns:PasswordChangeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LibrarySWSoap" type="tns:LibrarySWSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AccountSecurity">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/AccountSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerData">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/CustomerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInfo">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/CustomerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookList">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/BookList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookCategory">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/BookCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookListByCategory">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/BookListByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewBooks">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/NewBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentalByCustomer">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/RentalByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentalDetails">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/RentalDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FeedbackBook">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/FeedbackBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FeedbackCustomer">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/FeedbackCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBook">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/AddBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCopy">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/AddCopy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerList">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/CustomerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRental">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/AddRental" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentalReturns">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/RentalReturns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBook">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/SearchBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AvailableBooks">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/AvailableBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pendientes">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/Pendientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendientesByCustomer">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/PendientesByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LibrosSolicitados">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/LibrosSolicitados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentalCode">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/RentalCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookCode">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/BookCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImageProfileChange">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/ImageProfileChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopiesBook">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/CopiesBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordChange">
+      <soap:operation soapAction="http://manoamigalibrary.somee.com/PasswordChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LibrarySWSoap12" type="tns:LibrarySWSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AccountSecurity">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/AccountSecurity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerData">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/CustomerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInfo">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/CustomerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookList">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/BookList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookCategory">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/BookCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookListByCategory">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/BookListByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewBooks">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/NewBooks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentalByCustomer">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/RentalByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentalDetails">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/RentalDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FeedbackBook">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/FeedbackBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FeedbackCustomer">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/FeedbackCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBook">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/AddBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCopy">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/AddCopy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerList">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/CustomerList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRental">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/AddRental" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentalReturns">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/RentalReturns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBook">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/SearchBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AvailableBooks">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/AvailableBooks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pendientes">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/Pendientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendientesByCustomer">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/PendientesByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LibrosSolicitados">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/LibrosSolicitados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentalCode">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/RentalCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookCode">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/BookCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImageProfileChange">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/ImageProfileChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopiesBook">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/CopiesBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordChange">
+      <soap12:operation soapAction="http://manoamigalibrary.somee.com/PasswordChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LibrarySW">
+    <wsdl:port name="LibrarySWSoap" binding="tns:LibrarySWSoap">
+      <soap:address location="http://manoamigalibrary.somee.com/LibrarySW.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LibrarySWSoap12" binding="tns:LibrarySWSoap12">
+      <soap12:address location="http://manoamigalibrary.somee.com/LibrarySW.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

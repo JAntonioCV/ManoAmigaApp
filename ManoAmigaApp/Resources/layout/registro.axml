@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="@drawable/gradient">
+
+
+    <ImageView
+		android:src="@drawable/logo"
+		android:layout_width="130dp"
+		android:layout_height="130dp"
+		android:layout_centerHorizontal="true"
+		android:layout_below="@+id/textView1"
+		android:id="@+id/imageView1" />
+
+	<EditText
+		android:layout_width="250dp"
+		android:layout_height="40dp"
+		android:background="#ffff"
+		android:inputType="textPersonName"
+		android:layout_centerHorizontal="true"
+		android:layout_above="@+id/editText6"
+		android:ems="10"
+        android:hint="Cedula"
+		android:drawableLeft="@drawable/user_circle"
+	    android:layout_marginBottom="5dp"
+		android:textSize="16dp"
+		android:textColorHint="@android:color/black"
+		android:id="@+id/editText1" />
+
+
+	<EditText
+		android:layout_width="250dp"
+		android:layout_height="40dp"
+		android:background="#ffff"
+		android:ems="10"
+        android:hint="Correo Electronico"
+		android:layout_below="@+id/editText5"
+		android:layout_centerHorizontal="true"
+		android:drawableLeft="@drawable/user_circle"
+		android:textColorHint="@android:color/black"
+		android:layout_marginBottom="5dp"
+        android:inputType="textEmailAddress"
+        android:textSize="16dp"
+		android:id="@+id/editText2" />
+
+
+	<EditText
+		android:layout_width="250dp"
+		android:layout_height="40dp"
+		android:background="#ffff"
+		android:ems="10"
+		android:layout_centerHorizontal="true"
+		android:layout_below="@+id/editText2"
+        android:hint="Contraseña"
+		android:drawableLeft="@drawable/lock"
+		android:textColorHint="@android:color/black"
+		android:layout_marginBottom="5dp"
+		android:inputType="textPassword"
+        android:textSize="16dp"
+		android:id="@+id/editText4" />
+
+	<EditText
+		android:layout_width="250dp"
+		android:layout_height="40dp"
+		android:background="#ffff"
+		android:ems="10"
+		android:layout_centerInParent="true"
+        android:hint="Apellidos"
+		android:drawableLeft="@drawable/user_circle"
+		android:textColorHint="@android:color/black"
+		android:layout_marginBottom="5dp"
+        android:inputType="textPersonName"
+        android:textSize="16dp"
+		android:id="@+id/editText5" />
+
+	<EditText
+		android:layout_width="250dp"
+		android:layout_height="40dp"
+		android:background="#ffff"
+		android:ems="10"
+		android:layout_centerHorizontal="true"
+		android:layout_above="@+id/editText5"
+        android:hint="Nombres"
+		android:drawableLeft="@drawable/user_circle"
+		android:textColorHint="@android:color/black"
+		android:layout_marginBottom="5dp"
+        android:inputType="textPersonName"
+        android:textSize="16dp"
+		android:id="@+id/editText6" />
+
+	<EditText
+		android:layout_width="250dp"
+		android:layout_height="40dp"
+		android:background="#ffff"
+		android:inputType="textPassword"
+		android:layout_centerHorizontal="true"
+		android:layout_below="@+id/editText4"
+		android:ems="10"
+        android:hint="Confirmar Contraseña"
+		android:textSize="16dp"
+		android:textColorHint="@android:color/black"
+		android:drawableLeft="@drawable/lock"
+		android:id="@+id/editText3" />
+
+
+	<Button
+		android:text="@string/txtregistrarse"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="5dp"
+		android:backgroundTint="#ffff"
+		android:drawableLeft="@drawable/ic_save"
+		android:layout_below="@+id/editText3"
+		android:id="@+id/button1" />
+
+
+	<TextView
+		android:text="@string/txtregistro"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textColor="@android:color/white"
+		android:layout_alignParentTop="true"
+		android:textSize="20dp"
+		android:layout_marginTop="10dp"
+		android:layout_centerHorizontal="true"
+		android:id="@+id/textView1" />
+
+
+</RelativeLayout>

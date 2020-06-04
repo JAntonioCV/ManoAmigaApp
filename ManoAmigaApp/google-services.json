@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "539787410098",
+    "firebase_url": "https://manoamiga-693fe.firebaseio.com",
+    "project_id": "manoamiga-693fe",
+    "storage_bucket": "manoamiga-693fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539787410098:android:e49620203f7ecad0fda7ab",
+        "android_client_info": {
+          "package_name": "ManoAmigaApp.ManoAmigaApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539787410098-r8jf4plrag2t0mdn6p2h45k28ih3hi2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbcJvG8PAoYQEAJ8g2KnjOaMXTIXPBRSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539787410098-r8jf4plrag2t0mdn6p2h45k28ih3hi2m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

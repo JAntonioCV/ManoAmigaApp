@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  
+  <item
+      android:id="@+id/pendientes"
+      android:icon="@drawable/ic_pendientes"
+      android:title="@string/txtmenu4"/>
+
+  <item
+      android:id="@+id/prestamos"
+      android:icon="@drawable/ic_prestamos"
+      android:title="@string/txtmenu5" />
+
+  <item
+    android:id="@+id/devoluciones"
+    android:icon="@drawable/ic_devoluciones"
+    android:title="@string/txtmenu6" />
+
+  <item
+    android:id="@+id/estadisticas"
+    android:icon="@drawable/ic_estadisticas"
+    android:title="@string/txtmenu7" />
+
+
+
+</menu>

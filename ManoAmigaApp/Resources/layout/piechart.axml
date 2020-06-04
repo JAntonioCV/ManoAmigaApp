@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	<ImageButton
+		android:layout_width="50dp"
+		android:src="@drawable/calendar"
+		android:layout_gravity="center"
+		android:layout_height="50dp"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="10dp"
+		android:background="@android:color/transparent"
+		android:scaleType="fitXY"
+		android:id="@+id/button1" />
+
+	<TextView
+		android:text="Fecha"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:enabled="false"
+		android:gravity="center"
+		android:id="@+id/textView1" />
+
+	<TextView
+		android:text="cantidad"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:layout_marginLeft="20dp"
+		android:id="@+id/textView2" />
+
+	<com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+		android:layout_marginHorizontal="20dp"
+		android:layout_marginBottom="20dp">
+
+	</com.github.mikephil.charting.charts.PieChart>
+
+</LinearLayout>
+
+	    <android.support.design.widget.FloatingActionButton
+		
+        android:id="@+id/botonflotante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/ic_file_download" />
+
+
+</android.support.design.widget.CoordinatorLayout>

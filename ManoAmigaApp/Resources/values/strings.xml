@@ -1,0 +1,64 @@
+<resources>
+  <string name="app_name">Biblioteca Mano Amiga</string>
+  <string name="action_settings">Cambiar contraseña</string>
+
+  
+  
+  <!--menu bottonview Customer-->
+  <string name="txtmenu1">Libros</string>
+  <string name="txtmenu2">Categorias</string>
+  <string name="txtmenu3">Nuevos</string>
+  <string name="txtmenu4">Pendiente</string>
+
+  <!--menu bottonview Client-->
+  <string name="txtmenu5">Prestamos</string>
+  <string name="txtmenu6">Devoluciones</string>
+  <string name="txtmenu7">Estadisticas</string>
+  
+  
+
+  <!--Login y registro activity_main-->
+
+  <string name="txtinicio">Biblioteca Mano Amiga</string>
+  <string name="txtiniciar">Iniciar Sesion</string>
+  <string name="txtregistrarse">Registrarse</string>  
+  
+  <!--Registro-->
+  <string name="txtregistro">Registro de Clientes</string>
+
+  
+  <!--Fragmentlibro-->
+  <string name="txtlibros">Lista de Libros</string>
+
+  <!--Fragmentcategoria-->
+  <string name="txtcategorias">Lista de Categoria</string>
+
+  
+  <!--ADD CUSTOMER POP UP-->
+  <string name="txtId">Número de cédula</string>
+  <string name="txtNombres">Nombres</string>
+  <string name="txtApellidos">Apellidos</string>
+  <string name="txtGuardar">Guardar</string>
+
+  <string name="txtlogout">Cerrar Sesion</string>
+  <string name="txtchangepass">Perfil</string>
+
+  <string name="txtcopia">Seleccione una copia</string>
+
+  <!--LAYOUT PERSONALIZACION-->
+  <string name="txtPersonalizacion">Perfil</string>
+  <string name="txtCodigo">Cedula</string>
+  <string name="txtEmail">Email</string>
+
+  <string name="mod">Cedula</string>
+
+  <string name="txtContraVieja">Contraseña anterior</string>
+  <string name="textContra">Nueva Contraseña</string>
+  <string name="txtContraCofn">Confirme Contraseña</string>
+
+  <string name="txtcambiar">Cambiar</string>
+
+  <string name="txtContacto">Contacto</string>
+  <string name="txtCatalogo">Agregar Libro</string>
+
+</resources>

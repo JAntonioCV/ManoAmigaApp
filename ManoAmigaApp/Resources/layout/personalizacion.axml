@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:cardview="http://schemas.android.com/apk/res-auto"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+	android:layout_alignParentTop="true"
+    android:layout_height="wrap_content"
+	android:titleTextColor="#FFF"
+    android:background="#F0870F" />
+
+	<RelativeLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="50dp"
+		android:paddingBottom="20dp"
+		android:id="@+id/relativeLayout1" >
+
+	<android.support.v7.widget.CardView
+		android:layout_width="130dp"
+		android:layout_height="130dp"
+		android:layout_marginTop="50dp"
+		android:layout_centerInParent="true"
+		android:elevation="12dp"
+		app:cardCornerRadius="65dp"
+		android:id="@+id/cardView1">
+
+    <ImageView
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:id="@+id/imageView1"
+		android:src="@drawable/perfil"
+		android:scaleType="fitXY"/>
+
+	</android.support.v7.widget.CardView>
+
+
+	<ImageButton
+		android:text="Button"
+		android:layout_width="50dp"
+		android:layout_height="50dp"
+		android:src="@drawable/edit"
+		android:scaleType="fitXY"
+		android:layout_toRightOf="@+id/cardView1"
+		android:layout_alignBottom="@+id/cardView1"	
+		android:id="@+id/button1" />
+
+		</RelativeLayout>
+	<LinearLayout
+		android:orientation="vertical"
+		android:paddingHorizontal="50dp"
+		android:layout_width="match_parent"
+		android:layout_marginTop="50dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout2">
+		<TextView
+			android:text="@string/txtCodigo"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="50dp"
+			android:id="@+id/textView3" />
+		<TextView
+			android:text="Large Text"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="20dp"
+			android:id="@+id/textView2" />
+		<TextView
+			android:text="@string/txtNombres"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView4" />
+		<TextView
+			android:text="Medium Text"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="20dp"
+			android:id="@+id/textView5" />
+		<TextView
+			android:text="@string/txtEmail"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView6" />
+		<TextView
+			android:text="Medium Text"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="30dp"
+			android:id="@+id/textView7" />
+		<TextView
+			android:text="@string/action_settings"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAlignment="center"
+			android:layout_marginTop="30dp"
+			android:id="@+id/textView8" />
+	</LinearLayout>
+</LinearLayout>

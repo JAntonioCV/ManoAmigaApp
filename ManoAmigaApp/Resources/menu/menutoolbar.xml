@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <item
+      android:id="@+id/cambiar"
+      android:title="@string/txtchangepass"
+      android:showAsAction="never"/>
+
+  <item
+      android:id="@+id/contact"
+      android:title="@string/txtContacto"
+      android:showAsAction="never"/>
+  
+  <item
+      android:id="@+id/cerrar"
+      android:title="@string/txtlogout"
+      android:showAsAction="never"/>
+
+</menu>
+

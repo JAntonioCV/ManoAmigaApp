@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:paddingLeft="20dp"
+	android:paddingRight="20dp"
+	android:paddingTop="20dp">
+
+		<RelativeLayout
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="130dp"
+		android:paddingTop="20dp"
+		android:id="@+id/relativeLayout1">
+		<EditText
+			android:inputType="number"
+			android:layout_width="180dp"
+			android:layout_height="wrap_content"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:hint="ISBN  del libro"
+			android:maxLength="13"
+			android:layout_marginBottom="10dp"
+			android:layout_alignParentTop ="true"
+			android:id="@+id/editText1" />
+
+		<ImageButton
+			android:src="@drawable/scanner"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:scaleType="fitXY"
+			android:layout_toRightOf="@id/editText1"
+			android:id="@+id/button1" />
+
+		<ImageButton
+			android:src="@drawable/tick"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:scaleType="fitXY"
+			android:layout_toRightOf="@id/button1"
+			android:id="@+id/button2" />
+
+
+		<EditText
+			android:layout_width="300dp"
+			android:layout_height="wrap_content"
+			android:hint="Titulo"
+			android:layout_marginBottom="10dp"
+			android:layout_below="@id/button1"
+			android:id="@+id/editText2" />
+
+	</RelativeLayout>
+	<Spinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="20dp"
+		android:prompt="@string/txtiniciar"
+		android:id="@+id/spinner1" />
+
+</LinearLayout>
